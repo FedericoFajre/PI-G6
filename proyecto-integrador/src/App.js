@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import Home from "./screen/Home/Home";
+import Catalogo from "./screen/Catalogo/Catalogo";
+import NotFound from "./screen/NotFound/NotFound";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  return(
+    <React.Fragment>
+     <Switch>
+      <Route path="/" exact= {true} component={Home}/>
+      <Route path="/catalogo"  component={Catalogo}/>
+      <Route path="" component={NotFound}/>
+     </Switch>
+    </React.Fragment>
+  )
+};
 
 export default App;

@@ -1,0 +1,29 @@
+.tarjetas{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 16%;
+    background: whitesmoke;
+    height: 108vh;
+}
+
+.tarjetas img{
+    width: 100%;
+    margin-bottom: 20px; 
+}
+
+.tarjetas a{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.verMenos{
+    display: none;
+ }
+ 
+ .verMas{
+    display: block;
+ }
