@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import ListaPeli from "../ListaPeli/ListaPeli"
 import "./Peliculas.css"
+import { Link } from "react-router-dom/cjs/react-router-dom"
 
 class Peliculas extends Component{
 constructor(props){
@@ -20,6 +21,7 @@ componentDidMount(){
             filtro: data.results
         })
     })
+    .catch(error => console.log(error));
 }
 
 filtrarPeliculas(){
@@ -35,7 +37,16 @@ render(){
         <section className="contenedor">
             {this.state.peliculas.length === 0 ?
             <h3>Cargando...</h3>:
-           this.state.peliculas.map((peli, idx) =>  <ListaPeli key={peli + idx} data= {peli}/>)}
+            <React.Fragment>
+            <div className="titulo">
+            <Link to="/catalogo">Peliculas Populares</Link>
+            </div>
+            <article className="articulo"> 
+           {this.state.peliculas.map((peli, idx) =>  <ListaPeli key={peli + idx} data= {peli}/>)}
+            </article>                
+            </React.Fragment>
+            
+}
             
         </section>
       

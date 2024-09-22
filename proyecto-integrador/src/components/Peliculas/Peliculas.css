@@ -6,3 +6,24 @@
     align-items: center;
     
 }
+
+.titulo a{
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.articulo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.titulo{
+padding-top: 20px;
+font-size: larger;
+
+}

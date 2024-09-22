@@ -1,0 +1,17 @@
+.divBoton{
+    padding: 20px;
+}
+
+.divBoton button{
+    font-size: 25px;
+}
+
+.articulo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+

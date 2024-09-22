@@ -32,14 +32,15 @@ abrir(){
 
 render(){
     return(
-
         <article className="tarjetas">
             <img src= {"https://image.tmdb.org/t/p/original" + this.props.data.poster_path} alt=""/>
             <h2>{this.props.data.title}</h2>
             <p className={this.state.vision}>{this.props.data.overview}</p>
             <button onClick={()=> this.abrir()}>{this.state.boton}</button>
             <Link to={`/detalle/${this.props.data.id}`}>Ir al detalle</Link>
-        </article>
+        </article>    
+        
+        
         
         
     )

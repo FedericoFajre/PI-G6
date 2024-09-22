@@ -1,16 +1,16 @@
 import React from "react"
 import Header from "../../components/Header/Header"
-import Catalogue from "../../components/Catalogue/Catalogue"
+import Detail from "../../components/Detail/Detail"
 import Footer from "../../components/Footer/Footer"
 
-function Catalogo() {
+function Detalle(props) {
   return(
     <React.Fragment>
       <Header/>
-      <Catalogue/>
+      <Detail id={props.match.params.id}/>
       <Footer/>
     </React.Fragment>
   )
 };
 
-export default Catalogo;
+export default Detalle;
