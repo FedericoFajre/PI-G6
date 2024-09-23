@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ElementoMenu.css"
 
 
 function ElementoMenu(props) {
     return(
-        <li> <Link to={props.link}> {props.name}</Link></li>
+        <li className="navbar"> <Link to={props.link}> {props.name}</Link></li>
     )
 }
 

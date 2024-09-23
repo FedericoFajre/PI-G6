@@ -10,7 +10,7 @@ constructor(props){
         movie: "",
         oculto: true,
         boton: "Ver más",
-        vision: "Ver Menos"
+        vision: "verMenos"
     }
 }
 

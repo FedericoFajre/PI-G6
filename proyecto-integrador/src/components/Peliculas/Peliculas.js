@@ -17,19 +17,19 @@ componentDidMount(){
     .then((data)=> {
         console.log(data);
         this.setState({
-            peliculas: data.results,
-            filtro: data.results
+            peliculas: data.results
         })
     })
     .catch(error => console.log(error));
 }
 
-filtrarPeliculas(){
-    let peliFiltrada = this.state.filtro.filter((pj)=> pj.index = 5)
-    this.setState({
-        peliculas: peliFiltrada
-    })
+peliFiltro(){
+    return(
+    this.state.peliculas.filter((filtro, index) => filtro !== "" && index < 5)
+    )
+    
 }
+
 
 render(){
     return(
@@ -39,14 +39,13 @@ render(){
             <h3>Cargando...</h3>:
             <React.Fragment>
             <div className="titulo">
-            <Link to="/catalogo">Peliculas Populares</Link>
+            <h2>Peliculas Populares:  <Link to="/catalogo">Ir a catalogo populares</Link></h2>
             </div>
             <article className="articulo"> 
-           {this.state.peliculas.map((peli, idx) =>  <ListaPeli key={peli + idx} data= {peli}/>)}
+           {this.peliFiltro().map((peli, idx) =>  <ListaPeli key={peli + idx} data= {peli}/>)}
             </article>                
             </React.Fragment>
-            
-}
+            }
             
         </section>
       

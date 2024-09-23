@@ -8,10 +8,10 @@ function Header (){
         <nav>
             <ul className="nav">
                 <ElementoMenu name="Home" link="/"/>
-                <ElementoMenu name="Catalogo" link="/catalogo"/>
+                <ElementoMenu name="Catalogo Populares" link="/catalogo"/>
             </ul>
             <ul className="logo">
-                <li>PeliculasYA</li>
+            <ElementoMenu name="PeliculasYa" link="/"/>
             </ul>
         </nav>
     );
