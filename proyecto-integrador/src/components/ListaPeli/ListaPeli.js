@@ -9,7 +9,7 @@ constructor(props){
     this.state = {
         movie: "",
         oculto: true,
-        boton: "Ver más",
+        boton: "Ver descripción",
         vision: "verMenos"
     }
 }
@@ -17,13 +17,13 @@ constructor(props){
 abrir(){
     if(this.state.oculto){
         this.setState({
-       boton: "Ver menos",
+       boton: "Tapar descripción",
        vision: "verMas"
    })
    }
    else{
        this.setState({
-           boton: "Ver más",
+           boton: "Ver descripción",
            vision: "verMenos"
        })
    }

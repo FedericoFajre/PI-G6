@@ -1,13 +1,13 @@
 .contenedor{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
     
 }
 
 .titulo a{
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 

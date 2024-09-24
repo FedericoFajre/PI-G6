@@ -41,6 +41,7 @@ class Catalogue extends Component{
         console.log(data);
         this.setState({
             catalogo: this.state.catalogo.concat(data.results),
+            filtrado: this.state.filtrado.concat(data.results),
             numeroPagina: this.state.numeroPagina + 1
         })
     })

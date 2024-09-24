@@ -39,7 +39,7 @@ render(){
             <h3>Cargando...</h3>:
             <React.Fragment>
             <div className="titulo">
-            <h2>Peliculas Populares:  <Link to="/catalogo">Ir a catalogo populares</Link></h2>
+            <h2>Peliculas Populares:  <Link to="/catalogo">Ver todas las peliculas populares</Link></h2>
             </div>
             <article className="articulo"> 
            {this.peliFiltro().map((peli, idx) =>  <ListaPeli key={peli + idx} data= {peli}/>)}

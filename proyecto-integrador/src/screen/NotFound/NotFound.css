@@ -12,3 +12,10 @@
 .error p{
     font-size: 30px;
 }
+
+
+@media(max-width: 430px){
+    .error h1{
+        font-size: 90px;
+    }
+}

@@ -43,7 +43,8 @@ nav ul {
         flex-wrap: nowrap;
         justify-content: space-between;
         background-color: rgb(255, 56, 56);
-        color: #fff
+        color: #fff;
+        padding-right: 50px;
     }
 
     nav ul {
