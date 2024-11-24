@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, TextInput, TouchableOpacity, View, StyleSheet } from "react-native";
 import { auth } from "../firebase/config";
 
 class Login extends Component{
@@ -36,26 +36,26 @@ class Login extends Component{
 
     render(){
         return(
-            <View>
-                <TextInput
+            <View style={styles.container}>
+                <TextInput style={styles.input}
                 keyboardType="email-address"
                 placeholder="Email"
                 onChangeText={text => this.setState({email: text})}
                 value={this.state.email}/>
                 <Text>{this.state.errorMail}</Text>
-                <TextInput
+                <TextInput style={styles.input}
                 keyboardType="default"
                 placeholder="Contraseña"
                 secureTextEntry= {true}
                 onChangeText={text => this.setState({password: text})}
                 value={this.state.password}/>
                 <Text>{this.state.errorPass}</Text>
-                <TouchableOpacity
+                <TouchableOpacity style={styles.boton}
                 onPress={() => this.onSubmit(this.state.email, this.state.password)}>
-                    <Text>Login</Text>
+                    <Text style={styles.texto}>Login</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
+                <TouchableOpacity style={styles.container}
                 onPress={() => this.props.navigation.navigate('Register')}>
                     <Text>Ir al Registro</Text>
                 </TouchableOpacity>
@@ -64,5 +64,41 @@ class Login extends Component{
     }
 
 }
+
+const styles = StyleSheet.create({
+    container:{
+        paddingHorizontal: 10,
+        marginTop: 20
+    },
+    input:{
+        height: 20,
+        paddingVertical: 15,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderStyle: "solid",
+        borderRadius: 6,
+        marginVertical: 10
+    },
+    boton:{
+        backgroundColor: "#28a745",
+        paddingHorizontal: 10,
+        paddingVertical: 6, 
+        textAlign: "center",
+        borderRadius: 4,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "#28a745",
+        marginTop: 10       
+
+
+    },
+    texto:{
+        color: "#fff"
+    },
+    completar:{
+        color: "red"
+    }
+})
 
 export default Login

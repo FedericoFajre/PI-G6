@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { ActivityIndicator, FlatList, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
 import { db } from "../firebase/config";
 import Post from "./Post";
 
@@ -31,11 +31,20 @@ class Home extends Component{
 
     render(){
         return(
-            <View>
+            <View style={styles.container}>
                {this.state.cargando ? <ActivityIndicator/> : <FlatList data={this.state.posteo} keyExtractor={item => item.id.toString()} renderItem={({item}) => <Post datos={item}/>}/>}
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container:{
+        paddingHorizontal: 10,
+        marginTop: 20,
+        flex:1,
+        paddingBottom: 10
+    },
+})
 
 export default Home

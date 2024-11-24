@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {FontAwesome} from '@expo/vector-icons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Home from "./Home";
 import Profile from "./Profile";
 import NuevoPost from "../screens/NuevoPost";
@@ -16,9 +18,9 @@ class Navbar extends Component{
     render(){
         return(
             <Tab.Navigator>
-                <Tab.Screen name="Home" component={Home} options={{tabBarIcon: () => <FontAwesome name="Home" size={22} color={"green"}/>}}/>
-                <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: () => <FontAwesome name="Profile" size={22} color={"green"}/>}}/>
-                <Tab.Screen name="Nuevo Post" component={NuevoPost} options={{tabBarIcon: () => <FontAwesome name="NuevoPost" size={22} color={"green"}/>}}/>
+                <Tab.Screen name="Home" component={Home} options={{tabBarIcon: () => <FontAwesome name="home" size={24} color={"black"}/>}}/>
+                <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: () => <AntDesign name="user" size={24} color={"black"}/>}}/>
+                <Tab.Screen name="Nuevo Post" component={NuevoPost} options={{tabBarIcon: () => <MaterialIcons name="post-add" size={24} color={"black"}/>}}/>
 
             </Tab.Navigator>
          
