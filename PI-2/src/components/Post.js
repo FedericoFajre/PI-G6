@@ -23,7 +23,7 @@ class Post extends Component{
                 })
                 this.setState({
                     posteo: posts,
-                    boton: this.state.likeado ? "Deslikear" : "Likear"
+                    boton: this.state.likeado ? "Dislike" : "Like"
                 })
             }
         )
@@ -37,12 +37,12 @@ class Post extends Component{
         .then(() => {
         if(this.state.likeado){
             this.setState({
-           boton: "Likear"
+           boton: "Like"
        })
        }
        else{
            this.setState({
-               boton: "Deslikear"
+               boton: "Dislike"
            })
        }
        this.setState({likeado: !this.state.likeado})
@@ -52,12 +52,12 @@ class Post extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text>{this.props.datos.data.owner}: "{this.props.datos.data.posteo}"
-                <TouchableOpacity onPress={() => this.actualizarDatos()}> 
+                <Text style={styles.texto}>{this.props.datos.data.owner}: "{this.props.datos.data.posteo}" </Text>
+                <TouchableOpacity style={styles.likeo} onPress={() => this.actualizarDatos()}> 
                  <Text> {this.state.boton} </Text>
                 </TouchableOpacity> 
-                Este posteo tiene {this.props.datos.data.likeado.length} likes
-                </Text>
+                 <Text style={styles.texto}>{this.props.datos.data.likeado.length} likes</Text> 
+                
             </View>
         )
     }
@@ -66,8 +66,26 @@ class Post extends Component{
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 10,
-        marginTop: 20
+        marginTop: 20,
+        flex: 1, 
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "black",
+        borderColor:"white",
+        borderRadius:4,
+        border: "1px solid white"
     },
+    likeo: {
+        backgroundColor: "#D3D3D3",
+        borderRadius: 2,
+        borderStyle: "solid",
+        borderColor: "black",
+        width: 50,
+        alignItems: "center"
+    },
+    texto: {
+        color: "white"
+    }
 })
 
 export default Post

@@ -14,7 +14,8 @@ class Register extends Component{
             errorPass: "",
             errorUser: "",
             errorReg: "",
-            error: "Completar todos los campos"
+            error: "Completar todos los campos",
+            vision: "",
         }
     }
 
@@ -28,6 +29,7 @@ class Register extends Component{
         if (this.state.usuario.length < 4) {
             this.setState({errorUser: "El usuario debe tener una longitud mínima de 4 caracteres"})
         }
+
         auth.createUserWithEmailAndPassword(email, pass)
         .then(response => {
             this.setState({registered: true})
@@ -45,10 +47,9 @@ class Register extends Component{
 
         
     }
-    
 
     render(){
-         const completarForm = this.state.email.length > 0 && this.state.password.length > 0 && this.state.usuario.length > 0;
+         {this.state.email.length > 0 && this.state.password.length > 0 && this.state.usuario.length > 0 ? this.state.vision = styles.boton : this.state.vision = styles.oculto }
         return(
             <View style={styles.container}>
                 <TextInput style={styles.input}
@@ -57,14 +58,14 @@ class Register extends Component{
                 onChangeText={ text => this.setState({email:text})}
                 value={this.state.email}
                 />
-                <Text>{this.state.errorMail}</Text>
+                <Text style={styles.completar}>{this.state.errorMail}</Text>
                 <TextInput style={styles.input}
                 keyboardType="default"
                 placeholder="Usuario"
                 onChangeText={ text => this.setState({usuario:text})}
                 value={this.state.usuario}
                 />
-                <Text>{this.state.errorUser}</Text>
+                <Text style={styles.completar}>{this.state.errorUser}</Text>
                 <TextInput style={styles.input}
                 keyboardType="default"
                 placeholder="Contraseña"
@@ -72,18 +73,20 @@ class Register extends Component{
                 onChangeText={ text => this.setState({password:text})}
                 value={this.state.password}
                 />
-                <Text>{this.state.errorPass}</Text>
+                <Text style={styles.completar}>{this.state.errorPass}</Text>
 
 
-                {completarForm ? <TouchableOpacity style={styles.boton}
+                <TouchableOpacity style={this.state.vision}
                 onPress={() => this.onSubmit(this.state.email, this.state.password, this.state.usuario)}> 
                 <Text style={styles.texto}>Resgistrate</Text> 
-                </TouchableOpacity> : <Text style={styles.completar}>{this.state.error}</Text>}
+                </TouchableOpacity> 
+                <Text style={styles.texterr}>{this.state.error}</Text>
+
                 
 
         <TouchableOpacity style={styles.container}
                 onPress={() => this.props.navigation.navigate('Login')}>
-          <Text>Ir al Login</Text>
+          <Text style={styles.login}>Ir al Login</Text>
         </TouchableOpacity>
             </View>
         )
@@ -94,7 +97,8 @@ class Register extends Component{
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 10,
-        marginTop: 20
+        backgroundColor: "black",
+        flex: 1
     },
     input:{
         height: 20,
@@ -104,18 +108,19 @@ const styles = StyleSheet.create({
         borderColor: "#ccc",
         borderStyle: "solid",
         borderRadius: 6,
-        marginVertical: 10
+        marginVertical: 10,
+        color: "white"
     },
     boton:{
-        backgroundColor: "#28a745",
+        backgroundColor: "red",
         paddingHorizontal: 10,
         paddingVertical: 6, 
         textAlign: "center",
         borderRadius: 4,
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: "#28a745",
-        marginTop: 10       
+        borderColor: "red"
+ 
 
 
     },
@@ -124,7 +129,18 @@ const styles = StyleSheet.create({
     },
     completar:{
         color: "red"
+    },
+    oculto:{
+        display: "none"
+    },
+    login:{
+        color: "white"
+    },
+    texterr:{
+        color: "red",
+        margin: 10
     }
+
 })
 
 export default Register

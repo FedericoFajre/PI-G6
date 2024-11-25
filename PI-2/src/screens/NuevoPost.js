@@ -27,7 +27,7 @@ class NuevoPost extends Component{
             <View style={styles.container}>
                  <TextInput style={styles.input}
                 keyboardType="default"
-                placeholder="Postea"
+                placeholder ="Postea"
                 onChangeText={text => this.setState({post: text})}
                 value={this.state.post}
                 />
@@ -44,7 +44,8 @@ class NuevoPost extends Component{
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 10,
-        marginTop: 20
+        backgroundColor: "black",
+        flex: 1
     },
     input:{
         height: 20,
@@ -54,18 +55,18 @@ const styles = StyleSheet.create({
         borderColor: "#ccc",
         borderStyle: "solid",
         borderRadius: 6,
-        marginVertical: 10
+        marginVertical: 10,
+        color: "white"
     },
     boton:{
-        backgroundColor: "#28a745",
+        backgroundColor: "red",
         paddingHorizontal: 10,
         paddingVertical: 6, 
         textAlign: "center",
         borderRadius: 4,
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: "#28a745"
-
+        borderColor: "red"
 
     },
     texto:{

@@ -41,9 +41,9 @@ class Home extends Component{
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 10,
-        marginTop: 20,
         flex:1,
-        paddingBottom: 10
+        paddingBottom: 10,
+        backgroundColor: "black"
     },
 })
 

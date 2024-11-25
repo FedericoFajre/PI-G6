@@ -4,7 +4,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Home from "./Home";
-import Profile from "./Profile";
+import Profile from "../screens/Profile";
 import NuevoPost from "../screens/NuevoPost";
 
 

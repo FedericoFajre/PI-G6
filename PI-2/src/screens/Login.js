@@ -42,14 +42,14 @@ class Login extends Component{
                 placeholder="Email"
                 onChangeText={text => this.setState({email: text})}
                 value={this.state.email}/>
-                <Text>{this.state.errorMail}</Text>
+                <Text style={styles.completar}>{this.state.errorMail}</Text>
                 <TextInput style={styles.input}
                 keyboardType="default"
                 placeholder="Contraseña"
                 secureTextEntry= {true}
                 onChangeText={text => this.setState({password: text})}
                 value={this.state.password}/>
-                <Text>{this.state.errorPass}</Text>
+                <Text style={styles.completar}>{this.state.errorPass}</Text>
                 <TouchableOpacity style={styles.boton}
                 onPress={() => this.onSubmit(this.state.email, this.state.password)}>
                     <Text style={styles.texto}>Login</Text>
@@ -57,7 +57,7 @@ class Login extends Component{
 
                 <TouchableOpacity style={styles.container}
                 onPress={() => this.props.navigation.navigate('Register')}>
-                    <Text>Ir al Registro</Text>
+                    <Text style={styles.register}>Ir al Registro</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -68,7 +68,8 @@ class Login extends Component{
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 10,
-        marginTop: 20
+        backgroundColor: "black",
+        flex: 1
     },
     input:{
         height: 20,
@@ -78,19 +79,18 @@ const styles = StyleSheet.create({
         borderColor: "#ccc",
         borderStyle: "solid",
         borderRadius: 6,
-        marginVertical: 10
+        marginVertical: 10,
+        color: "white"
     },
     boton:{
-        backgroundColor: "#28a745",
+        backgroundColor: "red",
         paddingHorizontal: 10,
         paddingVertical: 6, 
         textAlign: "center",
         borderRadius: 4,
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: "#28a745",
-        marginTop: 10       
-
+        borderColor: "red"
 
     },
     texto:{
@@ -98,6 +98,10 @@ const styles = StyleSheet.create({
     },
     completar:{
         color: "red"
+    },
+    register:{
+        color: "white",
+        margin: 10
     }
 })
 
